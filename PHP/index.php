@@ -25,30 +25,21 @@
 </html>
 
 <?php
-if (isset($_POST['submit'])) {
-    $name = $_POST['name'];
-    $email = $_POST['email'];
-    $contact = $_POST['contact'];
-    $city = $_POST['city'];
-    $course = $_POST['course'];
-    $interest = $_POST['interests'];
+$name = $_POST['name'];
+$email = $_POST['email'];
+$contact = $_POST['contact'];
+$city = $_POST['city'];
+$course = $_POST['course'];
+$interest = $_POST['interests'];
 
-    if (empty($_POST['name'])) {
-        echo "Empty 'Name' is not allowed.";
-    } else if (empty($_POST['email'])) {
-        echo "Empty 'Email' is not allowed.";
-    } else if (empty($_POST['contact'])) {
-        echo "Empty 'Contact' is not allowed.";
-    } else if (empty($_POST['course'])) {
-        echo "Empty 'Course' is not allowed.";
-    } else if (empty($_POST['interests'])) {
-        echo "Empty 'Interest' is not allowed.";
-    } else {
-        echo "Name : $name <br/>";
-        echo "email : $email <br/>";
-        echo "contact : $contact <br/>";
-        echo "course : $course <br/>";
-	   echo "Interest : $interest";
-    }
+if (empty($name) or empty($email) or empty($contact) or empty($city) or empty($course) or empty($interest)) {
+	echo "Fill all inputs.";
+ }
+else if (isset($_POST['submit'])) {
+	echo "Name : $name <br/>";
+	echo "email : $email <br/>";
+	echo "contact : $contact <br/>";
+	echo "course : $course <br/>";
+	echo "Interest : $interest";
 }
 ?>
