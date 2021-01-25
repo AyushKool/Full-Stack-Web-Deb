@@ -1,29 +1,54 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
+    <title>php assignment</title>
 </head>
 <body>
-	<form>
-		Name 		<input type="text" name="name"> <br>
-		Email 		<input type="email" name="email"> <br>
-		Contact 		<input type="tel" name="contact"> <br>
-		City 		<input type="text" name="city"> <br>
-		Course 		<input type="text" name="course"> <br>
-		Interests 	<input type="text" name="interests"> <br>
+    <form method="post">
+        <label>Name</label> <input type="text" name="name" required> <br />
+        <label>Email</label> <input type="email" name="email" required> <br />
+        <label>Contact</label> <input type="text" name="contact" required> <br />
+        <label>City</label> <input type="text" name="city" required> <br />
+        <label>Course</label>
+        <select name="course" required>
+            <option>B.Tech</option>
+            <option>B.Sc</option>
+            <option>B.A</option>
+        </select> <br />
 
-		<input type="submit" name="submit">
-	</form>
+	   <label>Interests</label>
+        <input type="text" name="interests" required> <br>
+
+        <input type="submit" name="submit">
+    </form>
 </body>
+
 </html>
+
 <?php
-	if(isset($_POST['submit']) && isset($_POST['var1']) && isset($_POST['var2']))
-	{
-		$sum = $_POST['var1'] +  $_POST['var2'];
-		echo "Sum is $sum";
-	}
-	else
-		echo "No input";
+if (isset($_POST['submit'])) {
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $contact = $_POST['contact'];
+    $city = $_POST['city'];
+    $course = $_POST['course'];
+    $interest = $_POST['interests'];
+
+    if (empty($_POST['name'])) {
+        echo "Empty 'Name' is not allowed.";
+    } else if (empty($_POST['email'])) {
+        echo "Empty 'Email' is not allowed.";
+    } else if (empty($_POST['contact'])) {
+        echo "Empty 'Contact' is not allowed.";
+    } else if (empty($_POST['course'])) {
+        echo "Empty 'Course' is not allowed.";
+    } else if (empty($_POST['interests'])) {
+        echo "Empty 'Interest' is not allowed.";
+    } else {
+        echo "Name : $name <br/>";
+        echo "email : $email <br/>";
+        echo "contact : $contact <br/>";
+        echo "course : $course <br/>";
+	   echo "Interest : $interest";
+    }
+}
 ?>
