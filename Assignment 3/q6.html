@@ -1,0 +1,21 @@
+<html>
+
+<head>
+    <title>Assignment 3</title>
+
+</head>
+
+<body>
+    <h2>JavaScript Input (Q6)</h2>
+    <button id="prompt" onclick="displayMsg()">Hello Message</button>
+    <p id="msg"></p>
+    <script>
+        function displayMsg() {
+            firstName = prompt("Enter First Name: "), lastName = prompt("Enter Last Name: "), msg = document.getElementById("msg");
+            if (firstName === "" || lastName === "") return;
+            msg.innerHTML = `Welcome ${firstName} ${lastName} to the World of Web`
+        }
+    </script>
+</body>
+
+</html>
